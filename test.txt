@@ -1,1 +1,1471 @@
-abcd
+import scenario from "../../assets/audios/new/scenario.mp3";
+import design1 from "../../assets/audios/new/design1.mp3";
+import design2 from "../../assets/audios/new/design2.mp3";
+import test from "../../assets/audios/new/test.mp3";
+import redesign from "../../assets/audios/new/redesign.mp3";
+import imagine from "../../assets/audios/new/imagine.mp3";
+
+import spinnerFor4 from "../../assets/images/design/spinnerFor4.png";
+import spinnerFor2 from "../../assets/images/design/spinnerFor2.png";
+import drag1 from "../../assets/images/design/drag1.png";
+import drag2 from "../../assets/images/design/drag2.png";
+import w2big from "../../assets/images/design/design_2big.png";
+import w2small from "../../assets/images/design/design_2small.png";
+import w4big from "../../assets/images/design/design_4big.png";
+import w4small from "../../assets/images/design/design_4small.png";
+import gliderStart from "../../assets/images/test/gliderStart.png";
+import triggerOff from "../../assets/images/test/off.png";
+import speedBtnImage1 from "../../assets/images/test/slow.png";
+import speedBtnImage2 from "../../assets/images/test/fast.png";
+import importedMp4_1 from "../../assets/videos/frog.mp4";
+import importedMp4_2 from "../../assets/videos/butterfly.mp4";
+import importedMp4_3 from "../../assets/videos/fish.mp4";
+import importedMp4_4 from "../../assets/videos/chickenlifecycle.mp4";
+
+// import importedMp4 from "../../assets/videos/beetle.mp4";
+
+import { fossilFuelData } from "../../data/fossilFuelData";
+import { myData } from "../../data/myData";
+
+import globalData from "./global.en";
+
+export default {
+  videosCoal: [
+    {
+      id: 1,
+      content: importedMp4_1,
+      description:
+        "The coal that we see today was once large plants that lived and died in swamps. These dead plants were quickly covered by the water which resulted in just the right conditions for coal formation.",
+    },
+    {
+      id: 2,
+      content: importedMp4_2,
+      description:
+        "The coal we see today was once large plants that lived and died in swamps. The matter got slowly covered with water and broke down under high pressure.",
+    },
+    {
+      id: 3,
+      content: importedMp4_3,
+      description:
+        "Over millions of years the plants that had died in the swamps were covered with rocks, water, and dirt.",
+    },
+    {
+      id: 4,
+      content: importedMp4_4,
+      description:
+        "As time passed, the pressure from the rocks, water, and soil above and the heat   f rom the planet changed the ancient plant matter into coal.",
+    },
+  ],
+  videosOilnGas: [
+    {
+      id: 1,
+      content: importedMp4_1,
+      description:
+        "The  small plants and animals living in the ocean died and accumulated on the ocean floor. Over time the remains of those organisms were buried beneath layers of sand and silt.",
+    },
+    {
+      id: 2,
+      content: importedMp4_2,
+      description:
+        "As time passed, the pressure from the rocks, water, and soil above and the heat from the planet changed the ancient plant matter into coal.",
+    },
+    {
+      id: 3,
+      content: importedMp4_3,
+      description:
+        "To reach the  the oil and natural gas resources, humans have to drill through the layers of dirt, sand, and rock.",
+    },
+    // {
+    //   id:4,
+    //   content: importedMp4_4,
+    //   description:
+    //     "As time passed, the pressure from the rocks, water, and soil above and the heat   f rom the planet changed the ancient plant matter into coal.",
+    //   },
+  ],
+  labTitle: "Fossil Fuel Formation",
+  mainTitleSmallCase: "Life cycle of Frog and Butterfly",
+  sectionHead: "Notebook -",
+  footer: "Copyright © 2022 by  MHE. All Rights Reserved.",
+  hotspotPageFooterText:
+    "Every organism goes through several different stages during its life cycle. Does every organism have the same life cycle? Let's investigate.",
+  SecondViewFooterText:
+    " Every organism goes through several stages to become an adult. Let's explore...",
+  FrogButton: "Frog",
+  ButterflyButton: "Butterfly",
+  lifecyle_heading_frog: "Life cycle of a Beetle",
+  lifecyle_heading_butterfly: "Life cycle of a Cricket",
+  Close_btn: "Close",
+  altText: [
+    {
+      landingpageImage: "Beetle and cricket in their respective habitat",
+      firstscreenImage: "Life cycle of Beetle and cricket",
+      videoIcon: "The play icon for video",
+      handcursorImage: "hand cursor",
+      BeetlefirstframeImage: "first frame of beetle lifecycle",
+      BeetlelastframeImage: "last frame of Beetle lifecycle",
+      CricketfirstframeImage: "first frame of cricket lifecycle",
+      CricketlastframeImage: "last frame of cricket lifecycle",
+      BeetlelifecycleImage: "The circular flowchart of lifecycle of Beetle",
+      CricketlifecycleImage: "The circular flowchart of lifecycle of Cricket",
+    },
+  ],
+  tooltip: [
+    {
+      next: "Next",
+      previous: "Previous",
+      help: "Help",
+      screenshot: "Screenshot",
+      zoom: "Zoom",
+      notebook: "Notebook",
+    },
+  ],
+  imgAlt: "Circular Life Cycle drop zone with -1- dropped on it.",
+  // defaultImg: "Circular Life Cycle drop zone without any stages dropped on it.",
+  defaultImg: "A flowchart for lifecycle of beetle And cricket with 7 boxes",
+  defaultImgLabel:
+    // "Circular Life Cycle drop zone without any labels dropped on it.",
+    "A flowchart for lifecycle of beetle And cricket with 4 boxes",
+  isAltText: "is",
+  areAltText: "are",
+  andAltText: ", ",
+
+  description_array: [
+    {
+      id: 1,
+      title: "Eggs",
+      Secondtitle: "Egg",
+      alt: "Beetle egg with a scale to show its length",
+      ENG_text:
+        "The life cycle starts with a lady beetle laying groups of eggs.",
+      ESP_text: "",
+    },
+    {
+      id: 2,
+      title: "Larva",
+      Secondtitle: "Larva",
+      alt: "Larva with a scale to show its length",
+      ENG_text:
+        "A baby beetle, known as a larva, hatches from the egg. Over the next 3 to 4 weeks it grows larger as it eats food.",
+      ESP_text: "",
+    },
+    {
+      id: 3,
+      title: "Pupa",
+      Secondtitle: "Pupa",
+      alt: "Pupa with a scale to show its length",
+      ENG_text:
+        "At this stage, the larva attaches to a surface and changes into a pupa. The pupa remains motionless as it prepares for the next stage in its life cycle.",
+      ESP_text: "",
+    },
+    {
+      id: 4,
+      title: "Beetle",
+      Secondtitle: "Adult",
+      alt: "Beetle with a scale to show its length",
+      ENG_text:
+        "After spending 3 to 12 days as a pupa, the beetle develops and becomes an adult.",
+      ESP_text: "",
+    },
+    // {
+    //   id: 5,
+    //   title: "Frog",
+    //   alt: "Adult Frog with a scale to show its length",
+    //   ENG_text:
+    //     "When the froglet can live on land it has started the last stage of its life cycle. The froglet is now called a frog. The frog will continue to grow larger as it becomes an adult. The life cycle continues.",
+    //   ESP_text: "",
+    // },
+  ],
+  view_6_bAc: [
+    {
+      Bheading: "Life Cycle of a Beetle",
+      Balt: "A flowchart for lifecycle of beetle with empty boxes",
+      Cheading: "Life Cycle of a Cricket",
+      Calt: "A flowchart for lifecycle of cricket with empty boxes",
+      Activity_text:
+        "Drag and drop the stages into the correct locations to complete the life cycle.",
+    },
+  ],
+  view_7_bAc: [
+    {
+      heading: "Describe the stages of the life cycle.",
+      Bheading: "Life cycle of a Beetle",
+      Cheading: "Life cycle of a Cricket",
+      bAc_alt:
+        "A flowchart for lifecycle of beetle and cricket with empty boxes to put labels",
+      Activity_text: "Drag and drop the description in the correct box.",
+    },
+  ],
+  view_6_frog: [
+    {
+      heading: "Build the Life Cycle of a Frog",
+      Activity_text:
+        "Drag and drop the stages into the correct locations to complete the frog's life cycle.",
+    },
+  ],
+  view_7_frog: [
+    {
+      heading: "Label the Stages in the Life Cycle of a Frog",
+      Activity_text:
+        "Drag and drop the labels for each stage in the life cycle.",
+    },
+  ],
+  description_array_cricket: [
+    {
+      id: 1,
+      title: "Eggs",
+      Secondtitle: "Egg",
+      alt: "Cricket Egg with a scale to show its length",
+      ENG_text: "A cricket’s life cycle starts as an oval shaped egg.",
+      ESP_text: "",
+    },
+    {
+      id: 2,
+      title: "Nymph",
+      Secondtitle: "Nymph",
+      alt: "Nymph with a scale to show its length",
+      ENG_text:
+        "When a young cricket hatches from the egg, it is called a nymph. It looks like a miniature adult cricket but without wings. As the nymph grows it molts, or sheds, its outer covering. A nymph may go through this process 8 to 10 times as it gets larger in size.",
+      ESP_text: "",
+    },
+    {
+      id: 3,
+      title: "Cricket",
+      Secondtitle: "Adult",
+      alt: "Cricket with a scale to show its length",
+      ENG_text:
+        "After the nymph stage, the fully developed cricket is an adult, complete with wings.",
+      ESP_text: "",
+    },
+  ],
+  view_6_butterfly: [
+    {
+      heading: "Build the Life Cycle of a Butterfly",
+      Activity_text:
+        "Drag and drop the labels for each stage in the life cycle.",
+    },
+  ],
+  view_7_butterfly: [
+    {
+      heading: "Label the Stages in the Life Cycle of a Butterfly",
+      Activity_text:
+        "Drag and drop the labels for each stage in the life cycle.",
+    },
+  ],
+  hotspot: [
+    {
+      label: "Coal",
+      title: "Coal",
+      heading: "Coal",
+      hotspotpopupclass: "Coal-hotspot",
+      hotspotbuttonclass: "Coal-hotspot-fluid-spot",
+      id: "caterpillar-fluid",
+      info: "<p>Coal:A dark-colored solid fossil fuel that is extracted from the ground.</p>",
+      labelPosition: "top",
+      close: "Close",
+      hotspot_extra_description: "yes",
+    },
+    {
+      label: "Sand",
+      title: "Sand",
+      hotspotpopupclass: "Sand-hotspot",
+      hotspotbuttonclass: "Sand-hotspot-fluid-spot",
+      heading: "Sand",
+      info: "<p>Natural gas:A flammable  gaseous fossil fuel that is collected by drilling into rocks in the ocean and also from shale formations. Shales are fine-grained sedimentary rocks that can be rich sources of oil and natural gas.</p>",
+      id: "cytoplasm",
+      labelPosition: "top",
+      close: "Close",
+    },
+    {
+      label: "Oil",
+      title: "Oil",
+      hotspotpopupclass: "Oil-hotspot",
+      hotspotbuttonclass: "Oil-hotspot-fluid-spot",
+      heading: "Oil",
+      info: "<p>Oil:A flammable liquid fossil fuel that is collected by drilling into rocks in the ocean  and Shale formations.</p>",
+      id: "Oil",
+      labelPosition: "top",
+      close: "Close",
+    },
+  ],
+  tab1: {
+    slide1: {
+      heading: "",
+      body: `<p>This summer, you will tour an aviation lab to learn how pilots fly aircrafts. 
+      While you're there, you get to help design propellers for propeller planes. Propellers 
+      create a force called thrust that gives the plane the energy it needs to lift off.</p>
+      <p><br><b>Design a propeller that gives a model plane the right amount of thrust to lift off.</b></p>`,
+      audio: scenario,
+      imgAlt: "A propeller plane flying toward you in a cloudy sky.",
+    },
+  },
+  tab2: {
+    slide1: {
+      audio: design1,
+      body: `<p>A propeller changes the speed of the air on either side of it, pushing the air 
+      backward. When the air is pushed backward, the plane moves forward. Thrust is the force 
+      that causes the plane to move forward. The propeller needs to give the plane enough 
+      thrust so it can reach a speed that allows it to lift off.</p>
+      <p>An engine controls the propeller and how quickly the blades spin or rotate per minute 
+      (RPM). The more rotations the propeller makes in one minute, 
+      the faster the blades move.</p>`,
+      imgAlt:
+        "Propeller plane in the process of flying. There is one arrow pointing forward from the center of the propeller showing thrust and two additional arrows pointing backward from the center of the propeller showing airflow.",
+      imageText: [
+        { id: "airflowTop", text: "Airflow" },
+        { id: "airflowBottom", text: "Airflow" },
+        { id: "thrust", text: "Thrust" },
+      ],
+    },
+    slide2: {
+      audio: design2,
+      body: `<p>Design a propeller using the provided materials.</p>
+      <ol>
+      <li>Select one of the two spinners to decide on the number of blades your propeller will have.</li>
+      <li>Then choose a type of propeller blade. Drag the blades to the spinner to assemble your propeller. You can change your spinner and propeller choices by clicking the Cancel button.</li>
+      <li>Select the Done button to place your assembled propeller on the workbench.</li>
+      <li>Select the Next button to test your propeller.</li>
+      </ol>`,
+      imgAlt:
+        "A workspace for assembling parts of a toy plane. There is a table with 2 types of blades and 2 types of spinners for assembling an airplane propeller. One blade is large with a curve and the other is thinner and straight.",
+      defaultAriaLabel2:
+        "An overhead view of the spinner that can have two blades attached.",
+      defaultAriaLabel4:
+        "An overhead view of the spinner that can have four blades attached.",
+      oneThinBladeAriaLabel: "One thin blade is attached to spinner.",
+      oneCurvedBladeAriaLabel:
+        "One large, curved blade is attached to spinner.",
+      twoThinBladeAriaLabel: "two thin blades are attached to spinner.",
+      twoCurvedBladeAriaLabel:
+        "two large, curved blades are attached to spinner.",
+      threeThinBladeAriaLabel: "three thin blades are attached to spinner.",
+      threeCurvedBladeAriaLabel:
+        "three large, curved blades are attached to spinner.",
+      fourThinBladeAriaLabel: "four thin blades are attached to spinner.",
+      fourCurvedBladeAriaLabel:
+        "four large, curved blades are attached to spinner.",
+      spinnerFor4: spinnerFor4,
+      spinnerFor2: spinnerFor2,
+      drag1: drag1,
+      drag2: drag2,
+      w2big: w2big,
+      w2small: w2small,
+      w4big: w4big,
+      w4small: w4small,
+      smallAltText: {
+        0: "First small thin blade dropped on Droppable zone",
+        1: "Second small thin blade dropped on Droppable zone",
+        2: "Third small thin blade dropped on Droppable zone",
+        3: "Fourth small thin blade dropped on Droppable zone",
+      },
+      bigAltText: {
+        0: "First large curvy blade dropped on Droppable zone",
+        1: "Second large curvy blade dropped on Droppable zone",
+        2: "Third large curvy blade dropped on Droppable zone",
+        3: "Fourth large curvy blade dropped on Droppable zone",
+      },
+      dropzones2spinner: [
+        {
+          target: "TOP",
+          id: "top",
+          class: "dropElement1",
+          toastMsg: "<b>Correct!</b>",
+          label1: "top",
+          label: "1st drop area for two blade spinner",
+          altext: "first small thin blade dropped on Droppable zone 1",
+        },
+        {
+          target: "BOTTOM",
+          id: "bottom",
+          class: "dropElement2",
+          toastMsg: "<b>Correct!</b>",
+          label1: "bottom",
+          label: "2nd drop area for two blade spinner",
+          altext: "Second small thin blade dropped on Droppable zone 1",
+        },
+      ],
+      dropzones4spinner: [
+        {
+          target: "LEFT",
+          id: "left",
+          class: "dropElement3",
+          toastMsg: "<b>Correct!</b>",
+          label1: "left",
+          label: "1st drop area for four blade spinner",
+          altext: "first large curvy blade dropped on Droppable zone 1",
+        },
+        {
+          target: "TOP",
+          id: "top",
+          class: "dropElement1",
+          toastMsg: "<b>Correct!</b>",
+          label1: "top",
+          label: "2nd drop area for four blade spinner",
+          altext: "Second large curvy blade dropped on Droppable zone 2",
+        },
+        {
+          target: "RIGHT",
+          id: "right",
+          class: "dropElement4",
+          toastMsg: "<b>Correct!</b>",
+          label1: "right",
+          label: "3rd drop area for four blade spinner",
+          altext: "Third large curvy blade dropped on Droppable zone 3",
+        },
+        {
+          target: "BOTTOM",
+          id: "bottom",
+          class: "dropElement2",
+          toastMsg: "<b>Correct!</b>",
+          label1: "bottom",
+          label: "4th drop area for four blade spinner",
+          altext: "Fourth large curvy blade dropped on Droppable zone 4",
+        },
+      ],
+      bigDraggables: [
+        {
+          class: "draggingbig1",
+          type: "big",
+          label: "First large curvy blade draggable.",
+        },
+        {
+          class: "draggingbig2",
+          type: "big",
+          label: "Second large curvy blade draggable.",
+        },
+        {
+          class: "draggingbig3",
+          type: "big",
+          label: "Third large curvy blade draggable.",
+        },
+        {
+          class: "draggingbig4",
+          type: "big",
+          label: "Fourth large curvy blade draggable.",
+        },
+      ],
+      smallDraggables: [
+        {
+          class: "draggingsmall1",
+          type: "small",
+          label: "First small thin blade draggable.",
+        },
+        {
+          class: "draggingsmall2",
+          type: "small",
+          label: "Second small thin blade draggable.",
+        },
+        {
+          class: "draggingsmall3",
+          type: "small",
+          label: "Third small thin blade draggable.",
+        },
+        {
+          class: "draggingsmall4",
+          type: "small",
+          label: "Fourth small thin blade draggable.",
+        },
+      ],
+      warningMessage:
+        "Your propeller will work better if all the blades are of the same style.",
+    },
+    twoBladeThinAriaLabel:
+      "A propeller with two thin blades is on the workspace.",
+    twoBladeLargeAriaLabel:
+      "A propeller with two large, curved blades is on the workspace.",
+    fourBladeThinAriaLabel:
+      "A propeller with four thin blades is on the workspace.",
+    fourBladeLargeAriaLabel:
+      "A propeller with four large, curved blades is on the workspace.",
+    resetActivity: "Activity has been reset",
+  },
+  tab3: {
+    audio: test,
+    body: `<p>This model plane is attached to a spring that measures thrust. A control stick connected to the plane's engine changes the propeller's speed.</p>
+      <ol>
+      <li>Drag the propeller you designed to the front end of the model plane and drop it to attach it to the plane.</li>
+      <li>Select the control stick once to choose a slow propeller speed, twice to choose a fast propeller speed.</li>
+      <li>Select the Test button to turn the propeller on. Use the markings on the lab bench to measure the thrust. Each cm on the ruler corresponds to 0.5 N of thrust.</li>
+      </ol>
+      <p>The model plane will have enough energy to lift off if the thrust is at least 2.8 Newtons (N), but if it has more than 4.5 N of thrust, it may be difficult to control.</p>
+      <p>Record your observations in your Lab Notebook.</p>`,
+    imgAlt:
+      "The workspace now has the toy plane with its tail attached to an anchored spring. There is a ruler on the workspace that starts at the tail of the plane and extends to the right for 35 centimeters. The toy plane has a control stick that allows you to select the propeller speed.",
+    twoBladeThinAriaLabel:
+      "A propeller with two thin blades sits on the workspace in front of the ruler.",
+    twoBladeLargeAriaLabel:
+      "A propeller with two large, curved blades sits on the workspace in front of the ruler.",
+    fourBladeThinAriaLabel:
+      "A propeller with four thin blades sits on the workspace in front of the ruler.",
+    fourBladeLargeAriaLabel:
+      "A propeller with four large, curved blades sits on the workspace in front of the ruler.",
+
+    twoBladeThinAttachedAriaLabel:
+      "A propeller with two thin blades  is attached to the toy plane.",
+    twoBladeLargeAttachedAriaLabel:
+      "A propeller with two large, curved blades  is attached to the toy plane.",
+    fourBladeThinAttachedAriaLabel:
+      "A propeller with four thin blades  is attached to the toy plane.",
+    fourBladeLargeAttachedAriaLabel:
+      "A propeller with four large, curved blades  is attached to the toy plane.",
+
+    twoBladeThinMovingAriaLabel:
+      "The toy plane with the propeller with two thin blades is moving",
+    twoBladeLargeMovingAriaLabel:
+      "The toy plane with the propeller with two large, curved blades is moving",
+    fourBladeThinMovingAriaLabel:
+      "The toy plane with the propeller with four thin blades is moving",
+    fourBladeLargeMovingAriaLabel:
+      "The toy plane with the propeller with four large, curved blades is moving",
+    slowly: " slowly",
+    fast: " fast",
+
+    twoBladeThinStoppedAriaLabel:
+      "The toy plane with the propeller with two thin blades  is stopped at ",
+    twoBladeLargeStoppedAriaLabel:
+      "The toy plane with the propeller with two large, curved blades  is stopped at ",
+    fourBladeThinStoppedAriaLabel:
+      "The toy plane with the propeller with four thin blades  is stopped at ",
+    fourBladeLargeStoppedAriaLabel:
+      "The toy plane with the propeller with four large, curved blades  is stopped at ",
+    or: "or",
+    replayBtn: "Replay",
+    testBtn: "Test",
+    gliderStart: gliderStart,
+    speedBtn: [triggerOff, speedBtnImage1, speedBtnImage2],
+    tooltip: "Speed Control",
+    speedBtnLabel:
+      "Speed Control off. Select once for slow speed or twice for fast speed.",
+    slowSpeed: "Slow speed selected. Select once for fast speed. ",
+    fastSpeed: "Fast speed selected. Select once for slow speed.",
+    dropzones: [
+      {
+        target: "TAIL",
+        id: "tail",
+        class: "dropElement1",
+        toastMsg: "<b>Correct!</b>",
+        label1: "tail",
+        label: "front end drop zone",
+        altext: "Blade dropped on front end dropzone",
+      },
+    ],
+    draggables: [
+      { class: "small2Wing", type: "wing" },
+      { class: "small4Wing", type: "wing" },
+      { class: "big2Wing", type: "wing" },
+      { class: "big4Wing", type: "wing" },
+    ],
+    draggablesAltext: {
+      small2Wing: "Two small thin blade propeller draggable.",
+      small4Wing: "Four small thin blade propeller draggable.",
+      big2Wing: "Two large curvy propeller draggable.",
+      big4Wing: "Four large curvy propeller draggable.",
+    },
+    modelPlane: "model plane",
+    planeDistancesAltext: {
+      s22: ["3.0 cm, 1.5 Newton", "12.0 cm, 6.0 Newton"],
+      s44: ["1.5 cm, 0.8 Newton", "6.0 cm, 3.0 Newton"],
+      b22: ["7.4 cm, 3.7 Newton", "29.4 cm, 14.7 Newton"],
+      b44: ["3.7 cm, 1.8 Newton", "14.7 cm, 7.4 Newton"],
+    },
+  },
+  tab4: {
+    audio: redesign,
+    body: `<p>Now you may redesign and test your propeller. To measure the thrust of the same propeller at a different propeller speed, drag and drop your propeller onto the plane. Then use the control stick to choose a speed for the propeller. Select it once for a slow speed or twice for a fast speed.</p>
+
+    <p>You can also follow these steps to measure the thrust created by a different propeller design.</p>
+    <ol>
+      <li>Select the Reset button.</li>
+      <li>Select a spinner and attach the blades as you did in the Design section. Then select the Done button.</li>
+      <li>Drag and drop the propeller to attach it to the front end of the model plane.</li>
+      <li>Use the control stick to choose a speed for the propeller. Select it once for a slow speed or twice for a fast speed.</li>
+      <li>Select the Test button to turn the propeller on and measure the thrust.</li>
+    </ol>
+    <p>Record your observations in your Lab Notebook.</p>`,
+    imgAlt:
+      "The workspace now has the toy plane with its tail attached to an anchored spring. There is a ruler on the workspace that starts at the tail of the plane and extends to the right for 35 centimeters. The toy plane has a control stick that allows you to select the propeller speed.",
+    replayBtn: "Replay",
+    testBtn: "Test",
+    gliderStart: gliderStart,
+    speedBtn: [triggerOff, speedBtnImage1, speedBtnImage2],
+    dropzones: [
+      {
+        target: "TAIL",
+        id: "tail",
+        class: "redesignDropElement1",
+        toastMsg: "<b>Correct!</b>",
+        label1: "tail",
+        label: "  Front-end drop zone",
+        altext: "Blade dropped on Front-end dropzone",
+      },
+    ],
+    modelPlane: "model plane",
+    resetActivity: "Activity has been reset",
+  },
+  tab5: {
+    slide1: {
+      audio: imagine,
+      body: `<p>At lower temperatures, air is denser. This means there’s more air in the same amount of space. Remember that propeller blades need to push air backward to create thrust.</p>
+
+      <p>Suppose that one plane flies over Alaska and another plane of the same type, with the same propeller and propeller speed, flies over Florida. Which of the two planes would experience more thrust? Explain your answer.</p>`,
+      imgAlt: "A propeller plane flying past a snowy mountain range.",
+      sectionNameForPrint: "Imagine",
+      placeHolderData: "Type your answer here...",
+      content:
+        "Suppose that one plane flies over Alaska and another plane of the same type, with the same propeller and propeller speed, flies over Florida. Which of the two planes would experience more thrust? Explain your answer.",
+    },
+  },
+
+  buttonLabels: {
+    no: "No",
+    yes: "Yes",
+    next: "Next",
+    info: "Info",
+    check: "Check",
+    close: "Close",
+    reset: "Reset",
+    start: "Start",
+    finish: "Finish",
+    continue: "Continue",
+    playVideo: "Play video",
+    pauseVideo: "Pause video",
+    checkAnswer: "Check Answer",
+    submitAnswer: "Submit Answer",
+    stop: "Stop",
+  },
+  completionPopup: "You succeeded in making it to the end of the maze.",
+
+  correctToastMsg: "That's right! ",
+  incorrectToastMsg: "That's Not right!",
+  completionToastMsg: `That’s right! You can take a screenshot <button tabindex='-1' aria-hidden='true' class='screenshoticon'></button>  and save it in your notebook.`,
+  nextStageToastMsg: "Not quite. This is stage 3.",
+
+  draggableItemsLabels: [
+    {
+      srNo: 5,
+      id: "compressed",
+      source: "E",
+      label: "Compressed dead organism ocean floor",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.compressed_organism_ocean_floorImage,
+      alt: "compressed dead organism ocean floor",
+      dropzone: "dropzone5",
+      labelAlt: "the compressed dead organism ocean floor",
+    },
+    {
+      srNo: 8,
+      source: "H",
+      id: "black_coal",
+      label: "Black Coal",
+      infoText: "A brick wall.",
+      ariaLabel: "Black Coal draggable",
+      img: fossilFuelData.black_coalImage,
+      alt: "black coal",
+      dropzone: "dropzone8",
+      labelAlt: "the black coal",
+    },
+
+    {
+      srNo: 2,
+      id: "forest",
+      source: "B",
+      label: "Forest",
+      infoText: "A mirror.",
+      ariaLabel: "Forest draggable",
+      img: fossilFuelData.forest_Image,
+      alt: "forest",
+      dropzone: "dropzone2",
+      labelAlt: "the forest",
+    },
+    {
+      srNo: 1,
+      id: "ocean_floor",
+      source: "A",
+      label: "Ocean Floor",
+      ariaLabel: "Ocean Floor draggable",
+      infoText: "A Water in a transparent tank.",
+      img: fossilFuelData.ocean_floorImage,
+      alt: "ocean floor",
+      dropzone: "dropzone1",
+      labelAlt: "Ocean floor",
+    },
+
+    {
+      srNo: 3,
+      id: "dead_organism_ocean_floor",
+      source: "C",
+      label: "Dead Organism Ocean Floor",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.dead_organism_ocean_floorImage,
+      alt: "dead organism ocean floor",
+      dropzone: "dropzone3",
+      labelAlt: "the dead organism ocean floor",
+    },
+    {
+      srNo: 6,
+      id: "sediment_layers",
+      source: "F",
+      label: "Sediment Layers",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.sediment_layers_Image,
+      alt: "sediment layers",
+      dropzone: "dropzone6",
+      labelAlt: "the sediment layers",
+    },
+    {
+      srNo: 4,
+      id: "landscape",
+      source: "D",
+      label: "Landscape",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.landscape_Image,
+      alt: "landscape",
+      dropzone: "dropzone4",
+      labelAlt: "the landscape",
+    },
+    {
+      srNo: 7,
+      id: "gas_ocean",
+      source: "G",
+      label: "Gas Ocean",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.gas_ocean_floorImage,
+      alt: "gas ocean",
+      dropzone: "dropzone7",
+      labelAlt: "the gas ocean",
+    },
+  ],
+
+  dropzonesLabels: [
+    {
+      target: "H",
+      position: "1",
+      id: "dropzone8",
+      ariaLabel: "Dropzone for Laid by an adult label",
+      class: "Tadpole",
+      title: "Laid by an adult",
+      ariaLabelMatched:
+        "Light refracted through water tank and reflecting from mirror.",
+      label:
+        "Dropzone C where Light beams travels across and hits the third wall wall and stops",
+      alt: "A light beam shines across a crooked maze at night. Beam hits a mirror, bounces away, goes through a glass of water, bends down, hits a wall and stops",
+    },
+    {
+      target: "I",
+      id: "dropzone9",
+      position: "2",
+      ariaLabel: "Dropzone for Hatched from the egg label",
+      class: "Tadpole_2_legs",
+      title: "Hatched from the egg",
+      ariaLabelMatched:
+        "Light reflected from mirror and end into the brick wall.",
+      label:
+        "Dropzone D where Light beams travels across without any obstacle.",
+      alt: "Light beams across a dark maze, hits a mirror, bounces away, goes through a glass of water, bends down, hits another mirror, bounces past finish line.",
+    },
+    {
+      target: "J",
+      id: "dropzone10",
+      position: "3",
+      ariaLabel: "Dropzone for Enters pupa stage label",
+      class: "Tadpole_4_legs",
+      title: "Enters pupa stage",
+      ariaLabelMatched:
+        "Light reflected from mirror and end into the brick wall.",
+      label:
+        "Dropzone D where Light beams travels across without any obstacle.",
+      alt: "Light beams across a dark maze, hits a mirror, bounces away, goes through a glass of water, bends down, hits another mirror, bounces past finish line.",
+    },
+    {
+      target: "K",
+      id: "dropzone11",
+      position: "4",
+      ariaLabel: "Dropzone for Becomes adult label",
+      title: "Become adult",
+      class: "Adult_Frog",
+      ariaLabelMatched: "Light starts from torch and reflecting from mirror.",
+      label:
+        "Dropzone A where Light beams travels across and hits the first wall and stops",
+      alt: "A flashlight shines a beam of light from top left corner of a crooked maze at night. The beam travels across the maze, hits the first wall, and stops.",
+    },
+  ],
+
+  draggableItems: [
+    {
+      srNo: 5,
+      id: "compressed",
+      source: "E",
+      label: "Compressed dead organism ocean floor",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.compressed_organism_ocean_floorImage,
+      alt: "compressed dead organism ocean floor",
+      dropzone: "dropzone5",
+      labelAlt: "the compressed dead organism ocean floor",
+    },
+    {
+      srNo: 8,
+      source: "H",
+      id: "black_coal",
+      label: "Black Coal",
+      infoText: "A brick wall.",
+      ariaLabel: "Black Coal draggable",
+      img: fossilFuelData.black_coalImage,
+      alt: "black coal",
+      dropzone: "dropzone8",
+      labelAlt: "the black coal",
+    },
+
+    {
+      srNo: 2,
+      id: "forest",
+      source: "B",
+      label: "Forest",
+      infoText: "A mirror.",
+      ariaLabel: "Forest draggable",
+      img: fossilFuelData.forest_Image,
+      alt: "forest",
+      dropzone: "dropzone2",
+      labelAlt: "the forest",
+    },
+    {
+      srNo: 1,
+      id: "ocean_floor",
+      source: "A",
+      label: "Ocean Floor",
+      ariaLabel: "Ocean Floor draggable",
+      infoText: "A Water in a transparent tank.",
+      img: fossilFuelData.ocean_floorImage,
+      alt: "ocean floor",
+      dropzone: "dropzone1",
+      labelAlt: "Ocean floor",
+    },
+
+    {
+      srNo: 3,
+      id: "dead_organism_ocean_floor",
+      source: "C",
+      label: "Dead Organism Ocean Floor",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.dead_organism_ocean_floorImage,
+      alt: "dead organism ocean floor",
+      dropzone: "dropzone3",
+      labelAlt: "the dead organism ocean floor",
+    },
+    {
+      srNo: 6,
+      id: "sediment_layers",
+      source: "F",
+      label: "Sediment Layers",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.sediment_layers_Image,
+      alt: "sediment layers",
+      dropzone: "dropzone6",
+      labelAlt: "the sediment layers",
+    },
+    {
+      srNo: 4,
+      id: "landscape",
+      source: "D",
+      label: "Landscape",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.landscape_Image,
+      alt: "landscape",
+      dropzone: "dropzone4",
+      labelAlt: "the landscape",
+    },
+    {
+      srNo: 7,
+      id: "gas_ocean",
+      source: "G",
+      label: "Gas Ocean",
+      infoText: "A mirror.",
+      ariaLabel: "Mirror draggable",
+      img: fossilFuelData.gas_ocean_floorImage,
+      alt: "gas ocean",
+      dropzone: "dropzone7",
+      labelAlt: "the gas ocean",
+    },
+  ],
+
+  dropzones: [
+    {
+      target: "A",
+      id: "dropzone1",
+      position: "1",
+      ariaLabel:
+        "Flowchart for Lifecycle of Beetle with 4 dropzones, selected Empty Dropzone 1 for Beetle Eggs",
+      ariaLabelMatched:
+        "Light reflected from mirror and refracting through water tank.",
+      label:
+        "Dropzone B where Light beams travels across and hits the second wall and stops",
+      alt: "A flashlight shines a beam of light across a crooked maze at night. The beam hits a mirror, bounces in the opposite direction, hits a wall, and stops.",
+      flag: false,
+    },
+    {
+      target: "B",
+      id: "dropzone2",
+      position: "2",
+      ariaLabel: "Dropzone for Larva",
+      ariaLabelMatched:
+        "Light refracted through water tank and reflecting from mirror.",
+      label:
+        "Dropzone C where Light beams travels across and hits the third wall wall and stops",
+      alt: "A light beam shines across a crooked maze at night. Beam hits a mirror, bounces away, goes through a glass of water, bends down, hits a wall and stops",
+      flag: false,
+    },
+    {
+      target: "C",
+      id: "dropzone3",
+      position: "3",
+      ariaLabel: "Dropzone for Pupa",
+      ariaLabelMatched:
+        "Light reflected from mirror and end into the brick wall.",
+      label: "Dropzone D where Light beams travels across with obstacle.",
+      alt: "Light beams across a dark maze, hits a mirror, bounces away, goes through a glass of water, bends down, hits another mirror, bounces past finish line.",
+      flag: false,
+    },
+    {
+      target: "D",
+      id: "dropzone4",
+      position: "4",
+      ariaLabel: "Dropzone for Beetle",
+      ariaLabelMatched:
+        "Light reflected from mirror and end into the stone wall.",
+      label:
+        "Dropzone D where Light beams travels across without any obstacle.",
+      alt: "Light beams across a dark maze, hits a mirror, bounces away, goes through a glass of water, bends down, hits another mirror, bounces past finish line.",
+      flag: false,
+    },
+    {
+      target: "E",
+      id: "dropzone5",
+      position: "5",
+      ariaLabel:
+        "Flowchart for Lifecycle of Cricket with 3 dropzones, selected Empty Dropzone 1 for Cricket Eggs",
+      ariaLabelMatched: "Light starts from torch and reflecting from water.",
+      label:
+        "Dropzone A where Light beams travels across and hits the first wall and stops",
+      alt: "A flashlight shines a beam of light from top left corner of a crooked maze at night. The beam travels across the maze, hits the first wall, and stops.",
+      flag: false,
+    },
+    {
+      target: "F",
+      id: "dropzone6",
+      position: "6",
+      ariaLabel: "Dropzone for Nymph",
+      ariaLabelMatched: "Light starts from mobile and reflecting from mirror.",
+      label:
+        "Dropzone A where Light beams travels across and hits the second wall and stops",
+      alt: "A flashlight shines a beam of light from top left corner of a crooked maze at night. The beam travels across the maze, hits the first wall, and stops.",
+      flag: false,
+    },
+    {
+      target: "G",
+      id: "dropzone7",
+      position: "7",
+      ariaLabel: "Dropzone for Cricket",
+      ariaLabelMatched: "Light starts from torch and reflecting from solid.",
+      label:
+        "Dropzone A where Light beams travels across and hits the third wall and stops",
+      alt: "A flashlight shines a beam of light from top left corner of a crooked maze at night. The beam travels across the maze, hits the first wall, and stops.",
+      flag: false,
+    },
+    {
+      target: "H",
+      id: "dropzone8",
+      position: "8",
+      ariaLabel: "Dropzone for Mirror",
+      ariaLabelMatched: "Light starts from torch and reflecting from mirror.",
+      label:
+        "Dropzone A where Light beams travels across and hits the fourth wall and stops",
+      alt: "A flashlight shines a beam of light from top left corner of a crooked maze at night. The beam travels across the maze, hits the first wall, and stops.",
+      flag: false,
+    },
+  ],
+
+  // draggableItemsButterfly: [
+  //   {
+  //     srNo: 13,
+  //     id: "BM",
+  //     source: "M",
+  //     label: "Pupa Chrysalis",
+  //     infoText: "A mirror.",
+  //     ariaLabel: "Mirror draggable",
+  //     img: Draggable_Butterfly_3,
+  //     alt: "Pupa Chrysalis",
+  //     dropzone: "dropzoneM",
+  //   },
+  //   {
+  //     srNo: 15,
+  //     id: "BO",
+  //     source: "O",
+  //     label: "Butterfly",
+  //     ariaLabel: "Water draggable",
+  //     infoText: "A Water in a transparent tank.",
+  //     img: Draggable_Butterfly_5,
+  //     alt: "Butterfly",
+  //     dropzone: "dropzoneO",
+  //   },
+
+  //   {
+  //     srNo: 14,
+  //     id: "BN",
+  //     source: "N",
+  //     label: "Emerging from Chrysalis",
+  //     infoText: "A mirror.",
+  //     ariaLabel: "Mirror draggable",
+  //     img: Draggable_Butterfly_4,
+  //     alt: "Butterfly emerging from Chrysalis",
+  //     dropzone: "dropzoneN",
+  //   },
+
+  //   {
+  //     srNo: 11,
+  //     source: "K",
+  //     id: "BK",
+  //     label: "Egg",
+  //     infoText: "A brick wall.",
+  //     ariaLabel: "Brick wall draggable",
+  //     img: Draggable_Butterfly_1,
+  //     alt: "Butterfly Egg",
+  //     dropzone: "dropzoneK",
+  //   },
+  //   {
+  //     srNo: 12,
+  //     id: "BL",
+  //     source: "L",
+  //     label: "Larva caterpillar",
+  //     infoText: "A mirror.",
+  //     ariaLabel: "Mirror draggable",
+  //     img: Draggable_Butterfly_2,
+  //     alt: "Larva caterpillar",
+  //     dropzone: "dropzoneL",
+  //   },
+  // ],
+
+  // dropzonesButterfly: [
+  //   {
+  //     target: "K",
+  //     id: "dropzoneK",
+  //     position: "1",
+  //     ariaLabel: "Dropzone A",
+  //     ariaLabelMatched: "Light starts from torch and reflecting from mirror.",
+  //     label:
+  //       "Dropzone A where Light beams travels across and hits the first wall and stops",
+  //     alt: "A flashlight shines a beam of light from top left corner of a crooked maze at night. The beam travels across the maze, hits the first wall, and stops.",
+  //   },
+  //   {
+  //     target: "L",
+  //     id: "dropzoneL",
+  //     position: "2",
+  //     ariaLabel: "Dropzone B",
+  //     ariaLabelMatched:
+  //       "Light reflected from mirror and refracting through water tank.",
+  //     label:
+  //       "Dropzone B where Light beams travels across and hits the second wall and stops",
+  //     alt: "A flashlight shines a beam of light across a crooked maze at night. The beam hits a mirror, bounces in the opposite direction, hits a wall, and stops.",
+  //   },
+  //   {
+  //     target: "M",
+  //     id: "dropzoneM",
+  //     position: "3",
+  //     ariaLabel: "Dropzone C",
+  //     ariaLabelMatched:
+  //       "Light refracted through water tank and reflecting from mirror.",
+  //     label:
+  //       "Dropzone C where Light beams travels across and hits the third wall wall and stops",
+  //     alt: "A light beam shines across a crooked maze at night. Beam hits a mirror, bounces away, goes through a glass of water, bends down, hits a wall and stops",
+  //   },
+  //   {
+  //     target: "N",
+  //     id: "dropzoneN",
+  //     position: "4",
+  //     ariaLabel: "Dropzone D",
+  //     ariaLabelMatched:
+  //       "Light reflected from mirror and end into the brick wall.",
+  //     label:
+  //       "Dropzone D where Light beams travels across without any obstacle.",
+  //     alt: "Light beams across a dark maze, hits a mirror, bounces away, goes through a glass of water, bends down, hits another mirror, bounces past finish line.",
+  //   },
+  //   {
+  //     target: "O",
+  //     id: "dropzoneO",
+  //     position: "5",
+  //     ariaLabel: "Dropzone E",
+  //     ariaLabelMatched:
+  //       "Light reflected from mirror and end into the brick wall.",
+  //     label:
+  //       "Dropzone D where Light beams travels across without any obstacle.",
+  //     alt: "Light beams across a dark maze, hits a mirror, bounces away, goes through a glass of water, bends down, hits another mirror, bounces past finish line.",
+  //   },
+  // ],
+
+  // draggableItemsLabelsButterfly: [
+  //   {
+  //     srNo: 16,
+  //     source: "P",
+  //     id: "froglabelP",
+  //     label: "Eggs",
+  //     infoText: "A brick wall.",
+  //     ariaLabel: "Brick wall draggable",
+  //     img: myData.eggs_butterfly,
+  //     title: "Eggs",
+  //     dropzone: "dropzoneP",
+  //     class: "Adult_FrogP",
+  //   },
+  //   {
+  //     srNo: 20,
+  //     id: "4legslabelT",
+  //     source: "T",
+  //     label: "Butterfly",
+  //     title: "Butterfly ",
+  //     ariaLabel: "Water draggable",
+  //     infoText: "A Water in a transparent tank.",
+  //     img: myData.adult_butterfly,
+  //     dropzone: "dropzoneT",
+  //     class: "Tadpole_2_legsT",
+  //   },
+  //   {
+  //     srNo: 19,
+  //     id: "2legslabelS",
+  //     source: "S",
+  //     label: "Emerging from Chrysalis",
+  //     title: "Emerging from Chrysalis",
+  //     infoText: "A mirror.",
+  //     ariaLabel: "Mirror draggable",
+  //     img: myData.puppa2,
+  //     dropzone: "dropzoneS",
+  //     class: "Tadpole_2_legsS",
+  //   },
+  //   {
+  //     srNo: 18,
+  //     id: "tadpolelabelR",
+  //     source: "R",
+  //     label: "Pupa Chrysalis",
+  //     title: "Pupa- Chrysalis",
+  //     infoText: "A mirror.",
+  //     ariaLabel: "Mirror draggable",
+  //     img: myData.puppa,
+  //     dropzone: "dropzoneR",
+  //     class: "TadpoleR",
+  //   },
+  //   {
+  //     srNo: 17,
+  //     id: "eggslabelQ",
+  //     source: "Q",
+  //     label: "Larva caterpillar ",
+  //     title: "Larva- caterpillar ",
+  //     infoText: "A mirror.",
+  //     ariaLabel: "Mirror draggable",
+  //     img: myData.caterpillar,
+  //     dropzone: "dropzoneQ",
+  //     class: "EggsQ",
+  //   },
+  // ],
+  // dropzonesLabelsButterfly: [
+  //   {
+  //     target: "P",
+  //     id: "dropzoneP",
+  //     position: "1",
+  //     ariaLabel: "Dropzone A",
+  //     title: "Eggs",
+  //     class: "Adult_FrogP",
+  //     ariaLabelMatched: "Light starts from torch and reflecting from mirror.",
+  //     label:
+  //       "Dropzone A where Light beams travels across and hits the first wall and stops",
+  //     alt: "A flashlight shines a beam of light from top left corner of a crooked maze at night. The beam travels across the maze, hits the first wall, and stops.",
+  //   },
+  //   {
+  //     target: "Q",
+  //     id: "dropzoneQ",
+  //     position: "2",
+  //     ariaLabel: "Dropzone B",
+  //     class: "EggsQ",
+  //     title: "Larva-Caterpillar",
+  //     ariaLabelMatched:
+  //       "Light reflected from mirror and refracting through water tank.",
+  //     label:
+  //       "Dropzone B where Light beams travels across and hits the second wall and stops",
+  //     alt: "A flashlight shines a beam of light across a crooked maze at night. The beam hits a mirror, bounces in the opposite direction, hits a wall, and stops.",
+  //   },
+  //   {
+  //     target: "R",
+  //     id: "dropzoneR",
+  //     position: "3",
+  //     ariaLabel: "Dropzone C",
+  //     class: "TadpoleR",
+  //     title: "Pupa-Chrysalis",
+  //     ariaLabelMatched:
+  //       "Light refracted through water tank and reflecting from mirror.",
+  //     label:
+  //       "Dropzone C where Light beams travels across and hits the third wall wall and stops",
+  //     alt: "A light beam shines across a crooked maze at night. Beam hits a mirror, bounces away, goes through a glass of water, bends down, hits a wall and stops",
+  //   },
+  //   {
+  //     target: "S",
+  //     id: "dropzoneS",
+  //     position: "4",
+  //     ariaLabel: "Dropzone D",
+  //     class: "Tadpole_2_legsS",
+  //     title: "Emerging from Chrysalis",
+  //     ariaLabelMatched:
+  //       "Light reflected from mirror and end into the brick wall.",
+  //     label:
+  //       "Dropzone D where Light beams travels across without any obstacle.",
+  //     alt: "Light beams across a dark maze, hits a mirror, bounces away, goes through a glass of water, bends down, hits another mirror, bounces past finish line.",
+  //   },
+  //   {
+  //     target: "T",
+  //     id: "dropzoneT",
+  //     position: "5",
+  //     ariaLabel: "Dropzone E",
+  //     class: "Tadpole_4_legsT",
+  //     title: "Butterfly",
+  //     ariaLabelMatched:
+  //       "Light reflected from mirror and end into the brick wall.",
+  //     label:
+  //       "Dropzone D where Light beams travels across without any obstacle.",
+  //     alt: "Light beams across a dark maze, hits a mirror, bounces away, goes through a glass of water, bends down, hits another mirror, bounces past finish line.",
+  //   },
+  // ],
+
+  labGloabalData: {
+    ...globalData.labGloabalData,
+    label: "Type your notes here for",
+    screen: "screen",
+  },
+  notebook: {
+    addPageTitle: "A new page has been added",
+    deletePageTitle: "A page has been deleted",
+    page1: {},
+    page2: {
+      text1: `<p>1. What is the relationship between thrust and the air that acts on propellers?</p>`,
+      content:
+        "1. What is the relationship between thrust and the air that acts on propellers?",
+    },
+    page3: {
+      text1: `<p>2. In which position during the test does the spring have the most potential energy? </p>`,
+      text2: `<p>3. How does the propeller's speed relate to the energy it supplies to push the air backward? How does the energy with which the air moves backward relate to the airplane's thrust?</p> `,
+      content1:
+        "2. In which position during the test does the spring have the most potential energy? ",
+      content2:
+        "3. How does the propeller's speed relate to the energy it supplies to push the air backward? How does the energy with which the air moves backward relate to the airplane's thrust?",
+    },
+    page4: {
+      tableheading: JSON.stringify([
+        "Number of blades",
+        "Blades size",
+        "Propeller speed",
+        "Displacement",
+        "Thrust",
+      ]),
+      numberOfRows: 8,
+      caption: "Redesign observations",
+      summary: "properties of redesign table",
+    },
+    page5: {
+      text1: `<p>4. How do the number of blades and the size of the blades affect the thrust on the plane?</p>`,
+      text2: `<p>5. What happens to thrust as the airspeed behind the propeller increases or decreases?</p> `,
+      content1:
+        "4. How do the number of blades and the size of the blades affect the thrust on the plane? ",
+      content2:
+        "5. What happens to thrust as the airspeed behind the propeller increases or decreases?",
+    },
+    page6: {},
+  },
+  arrowLabels: {
+    upArrow: "up-arrow Draggable",
+    downArrow: "down-arrow Draggable",
+    leftArrow: "left-arrow Draggable",
+    rightArrow: "right-arrow Draggable",
+  },
+  completedActivity: "-1- Completed",
+  spinerData: [
+    {
+      label: "Two blade spinner",
+    },
+    {
+      label: "Four blade spinner",
+    },
+  ],
+
+  notebookData: [
+    {
+      title: "Notes",
+      screenshote: "Scenario Screenshot",
+    },
+    {
+      title: "Notes",
+      screenshote: "Scenario Screenshot",
+    },
+    {
+      title: "Notes",
+      screenshote: "Scenario Screenshot",
+    },
+    {
+      title: "Notes",
+      screenshote: "Scenario Screenshot",
+    },
+    {
+      title: "Notes",
+      screenshote: "Scenario Screenshot",
+    },
+    {
+      title: "Notes",
+      screenshote: "Scenario Screenshot",
+    },
+  ],
+
+  tabs: [
+    //Bettle
+    {
+      title: "Notes",
+      component: "View1Container",
+      numberOfSubTab: 0,
+      footerButtonTextNext: "Next",
+      className: "remove-outline",
+      footerButtonTextPrev: "Previous",
+      isCompleted: true,
+      subTabLength: 1,
+    },
+
+    {
+      title: "Redesign",
+      component: "View4Container",
+      numberOfSubTab: 0,
+      footerButtonTextNext: "Next",
+      footerButtonTextPrev: "Previous",
+      isCompleted: false,
+      subTabLength: 1,
+    },
+    // {
+    //   title: "Imagine",
+    //   component: "View5Container",
+    //   numberOfSubTab: 0,
+    //   footerButtonTextNext: "Next",
+    //   footerButtonTextPrev: "Previous",
+    //   isCompleted: false,
+    //   subTabLength: 1,
+    // },
+    {
+      title: "DragandDropPage1",
+      component: "View6Container",
+      numberOfSubTab: 0,
+      footerButtonTextNext: "Next",
+      footerButtonTextPrev: "Previous",
+      isCompleted: false,
+      subTabLength: 1,
+    },
+    // {
+    //   title: "DragandDropPage2",
+    //   component: "View7Container",
+    //   numberOfSubTab: 0,
+    //   footerButtonTextNext: "Next",
+    //   footerButtonTextPrev: "Previous",
+    //   isCompleted: false,
+    //   subTabLength: 1,
+    // },
+  ],
+
+  tabsForButterfly: [
+    //Cricket
+    {
+      title: "Notes",
+      component: "View1Container",
+      numberOfSubTab: 0,
+      footerButtonText: "Next",
+      className: "remove-outline",
+      isCompleted: true,
+      subTabLength: 1,
+    },
+    // {
+    //   title: "Design",
+    //   component: "DesignContainer",
+    //   numberOfSubTab: 2,
+    //   footerButtonText: "Next",
+    //   isCompleted: false,
+    //   subTabLength: 2,
+    // },
+    // {
+    //   title: "Test",
+    //   component: "TestContainer",
+    //   numberOfSubTab: 0,
+    //   footerButtonText: "Next",
+    //   isCompleted: false,
+    //   subTabLength: 1,
+    // },
+    {
+      title: "Redesign",
+      component: "View4BContainer",
+      numberOfSubTab: 0,
+      footerButtonText: "Next",
+      isCompleted: false,
+      subTabLength: 1,
+    },
+    // {
+    //   title: "Imagine",
+    //   component: "View5BContainer",
+    //   numberOfSubTab: 0,
+    //   footerButtonText: "Next",
+    //   isCompleted: false,
+    //   subTabLength: 1,
+    // },
+    // {
+    //   title: "DragandDropPage1",
+    //   component: "View6BContainer",
+    //   numberOfSubTab: 0,
+    //   footerButtonText: "Next",
+    //   isCompleted: false,
+    //   subTabLength: 1,
+    // },
+    // {
+    //   title: "DragandDropPage2",
+    //   component: "View7BContainer",
+    //   numberOfSubTab: 0,
+    //   footerButtonText: "Submit",
+    //   isCompleted: false,
+    //   subTabLength: 1,
+    // },
+  ],
+  buttonsLable: {
+    reset: "Reset",
+    submit: "Submit",
+    start: "Start",
+    stop: "Stop",
+    save: "Save",
+    help: "Help",
+    labNotebook: "Lab Notebook",
+    skipToMain: "Skip to Main Content",
+    play: "Audio Play",
+    pause: "Audio Pause",
+    replay: "Audio Replay",
+    hamburger: "more options",
+    showMap: "Show Map",
+    cancel: "Cancel",
+    done: "Done",
+  },
+  commonWords: {
+    selected: "selected",
+  },
+  stickyNotesLiveText: {
+    addNote1: "first sticky node added",
+    addNote2: "second sticky note added",
+    addNote3: "third sticky note added",
+    deleteNote: "All sticky notes are removed from the screen",
+  },
+  start: "Start",
+  dropzonesMapLabels: [
+    "400-300 Million Year",
+    "200 Million Year",
+    "100 Million Year",
+    "Present Year",
+  ],
+};
